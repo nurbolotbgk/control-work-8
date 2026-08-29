@@ -7,6 +7,7 @@ import com.example.control_work_8.repository.FileInfoRepository;
 import com.example.control_work_8.repository.UserRepository;
 import com.example.control_work_8.service.FileInfoService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -19,6 +20,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
 
+
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class FileInfoServiceImpl implements FileInfoService {
@@ -58,6 +61,12 @@ public class FileInfoServiceImpl implements FileInfoService {
         }
 
         fileInfoRepository.save(fileInfo);
+
+        log.info(
+                "Пользователь {} загрузил файл {}",
+                email,
+                originalName
+        );
     }
 
 
@@ -148,13 +157,16 @@ public class FileInfoServiceImpl implements FileInfoService {
 
 
     @Override
-    public void incrementDownloadCount(Long id) {
+    public void addDownloadCount(Long id) {
 
         FileInfo fileInfo = fileInfoRepository.findById(id).orElseThrow();
-
         fileInfo.setDownloadCount(fileInfo.getDownloadCount() + 1);
-
         fileInfoRepository.save(fileInfo);
+        log.info(
+                "Файл {} скачен. Количество скачиваний: {}",
+                fileInfo.getOriginalName(),
+                fileInfo.getDownloadCount()
+        );
     }
 
 
@@ -162,9 +174,11 @@ public class FileInfoServiceImpl implements FileInfoService {
     public void deleteShareKey(Long id) {
 
         FileInfo fileInfo = fileInfoRepository.findById(id).orElseThrow();
-
         fileInfo.setShareKey(null);
-
         fileInfoRepository.save(fileInfo);
+        log.info(
+                "Разовый ключ файла {} удален",
+                fileInfo.getOriginalName()
+        );
     }
 }

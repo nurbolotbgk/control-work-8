@@ -148,8 +148,14 @@
 
                                         <a href="/files/private/${file.shareKey}"
                                            class="btn btn-sm btn-outline-warning">
-                                            Скачать по ссылке
+                                            Скачать
                                         </a>
+
+                                        <div class="mt-2">
+                                            <small>
+                                                /files/private/${file.shareKey}
+                                            </small>
+                                        </div>
 
                                     <#else>
 

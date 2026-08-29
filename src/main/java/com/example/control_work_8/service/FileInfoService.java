@@ -17,7 +17,7 @@ public interface FileInfoService {
 
     FileInfoDto getPrivateFileByKey(String shareKey);
 
-    void incrementDownloadCount(Long id);
+    void addDownloadCount(Long id);
 
     void deleteShareKey(Long id);
 }
