@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 003
+      id: 002
       author: Nurbolot Abilov
       changes:
         - createTable:
@@ -31,12 +31,6 @@ databaseChangeLog:
                   type: varchar(100)
 
               - column:
-                  name: file_path
-                  type: varchar(500)
-                  constraints:
-                    nullable: false
-
-              - column:
                   name: is_public
                   type: boolean
                   defaultValueBoolean: false
@@ -46,12 +40,6 @@ databaseChangeLog:
               - column:
                   name: share_key
                   type: varchar(255)
-
-              - column:
-                  name: upload_date
-                  type: timestamp
-                  constraints:
-                    nullable: false
 
               - column:
                   name: download_count

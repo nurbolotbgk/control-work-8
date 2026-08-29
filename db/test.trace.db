@@ -1,0 +1,181 @@
+2026-08-29 12:12:44.483954+05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "DATABASECHANGELOGLOCK" не найдена
+Table "DATABASECHANGELOGLOCK" not found; SQL statement:
+SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK [42102-240]
+2026-08-29 12:12:44.628185+05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "[*]NSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a    'document1.txt',\000a    'document1.txt',\000a    'text/plain',\000a    TRUE,\000a    NULL,\000a    0,\000a    (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a);\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'photo.jpg',\000a           'photo.jpg',\000a           'image/jpeg',\000a           TRUE,\000a           NULL,\000a           2,\000a           (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a       );\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'private.txt',\000a           'private.txt',\000a           'text/plain',\000a           FALSE,\000a           'test-private-key-123',\000a           0,\000a           (SELECT id FROM users WHERE email = 'user2@gmail.com')\000a       );"
+Syntax error in SQL statement "[*]NSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a    'document1.txt',\000a    'document1.txt',\000a    'text/plain',\000a    TRUE,\000a    NULL,\000a    0,\000a    (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a);\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'photo.jpg',\000a           'photo.jpg',\000a           'image/jpeg',\000a           TRUE,\000a           NULL,\000a           2,\000a           (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a       );\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'private.txt',\000a           'private.txt',\000a           'text/plain',\000a           FALSE,\000a           'test-private-key-123',\000a           0,\000a           (SELECT id FROM users WHERE email = 'user2@gmail.com')\000a       );"; SQL statement:
+NSERT INTO files (
+    original_name,
+    stored_name,
+    content_type,
+    is_public,
+    share_key,
+    download_count,
+    user_id
+)
+VALUES (
+    'document1.txt',
+    'document1.txt',
+    'text/plain',
+    TRUE,
+    NULL,
+    0,
+    (SELECT id FROM users WHERE email = 'user1@gmail.com')
+);
+
+INSERT INTO files (
+    original_name,
+    stored_name,
+    content_type,
+    is_public,
+    share_key,
+    download_count,
+    user_id
+)
+VALUES (
+           'photo.jpg',
+           'photo.jpg',
+           'image/jpeg',
+           TRUE,
+           NULL,
+           2,
+           (SELECT id FROM users WHERE email = 'user1@gmail.com')
+       );
+
+INSERT INTO files (
+    original_name,
+    stored_name,
+    content_type,
+    is_public,
+    share_key,
+    download_count,
+    user_id
+)
+VALUES (
+           'private.txt',
+           'private.txt',
+           'text/plain',
+           FALSE,
+           'test-private-key-123',
+           0,
+           (SELECT id FROM users WHERE email = 'user2@gmail.com')
+       ); [42000-240]
+2026-08-29 12:13:22.992337+05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "[*]NSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a    'document1.txt',\000a    'document1.txt',\000a    'text/plain',\000a    TRUE,\000a    NULL,\000a    0,\000a    (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a);\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'photo.jpg',\000a           'photo.jpg',\000a           'image/jpeg',\000a           TRUE,\000a           NULL,\000a           2,\000a           (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a       );\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'private.txt',\000a           'private.txt',\000a           'text/plain',\000a           FALSE,\000a           'test-private-key-123',\000a           0,\000a           (SELECT id FROM users WHERE email = 'user2@gmail.com')\000a       );"
+Syntax error in SQL statement "[*]NSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a    'document1.txt',\000a    'document1.txt',\000a    'text/plain',\000a    TRUE,\000a    NULL,\000a    0,\000a    (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a);\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'photo.jpg',\000a           'photo.jpg',\000a           'image/jpeg',\000a           TRUE,\000a           NULL,\000a           2,\000a           (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a       );\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'private.txt',\000a           'private.txt',\000a           'text/plain',\000a           FALSE,\000a           'test-private-key-123',\000a           0,\000a           (SELECT id FROM users WHERE email = 'user2@gmail.com')\000a       );"; SQL statement:
+NSERT INTO files (
+    original_name,
+    stored_name,
+    content_type,
+    is_public,
+    share_key,
+    download_count,
+    user_id
+)
+VALUES (
+    'document1.txt',
+    'document1.txt',
+    'text/plain',
+    TRUE,
+    NULL,
+    0,
+    (SELECT id FROM users WHERE email = 'user1@gmail.com')
+);
+
+INSERT INTO files (
+    original_name,
+    stored_name,
+    content_type,
+    is_public,
+    share_key,
+    download_count,
+    user_id
+)
+VALUES (
+           'photo.jpg',
+           'photo.jpg',
+           'image/jpeg',
+           TRUE,
+           NULL,
+           2,
+           (SELECT id FROM users WHERE email = 'user1@gmail.com')
+       );
+
+INSERT INTO files (
+    original_name,
+    stored_name,
+    content_type,
+    is_public,
+    share_key,
+    download_count,
+    user_id
+)
+VALUES (
+           'private.txt',
+           'private.txt',
+           'text/plain',
+           FALSE,
+           'test-private-key-123',
+           0,
+           (SELECT id FROM users WHERE email = 'user2@gmail.com')
+       ); [42000-240]
+2026-08-29 12:13:52.963480+05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "[*]NSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a    'document1.txt',\000a    'document1.txt',\000a    'text/plain',\000a    TRUE,\000a    NULL,\000a    0,\000a    (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a);\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'photo.jpg',\000a           'photo.jpg',\000a           'image/jpeg',\000a           TRUE,\000a           NULL,\000a           2,\000a           (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a       );\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'private.txt',\000a           'private.txt',\000a           'text/plain',\000a           FALSE,\000a           'test-private-key-123',\000a           0,\000a           (SELECT id FROM users WHERE email = 'user2@gmail.com')\000a       );"
+Syntax error in SQL statement "[*]NSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a    'document1.txt',\000a    'document1.txt',\000a    'text/plain',\000a    TRUE,\000a    NULL,\000a    0,\000a    (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a);\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'photo.jpg',\000a           'photo.jpg',\000a           'image/jpeg',\000a           TRUE,\000a           NULL,\000a           2,\000a           (SELECT id FROM users WHERE email = 'user1@gmail.com')\000a       );\000a\000aINSERT INTO files (\000a    original_name,\000a    stored_name,\000a    content_type,\000a    is_public,\000a    share_key,\000a    download_count,\000a    user_id\000a)\000aVALUES (\000a           'private.txt',\000a           'private.txt',\000a           'text/plain',\000a           FALSE,\000a           'test-private-key-123',\000a           0,\000a           (SELECT id FROM users WHERE email = 'user2@gmail.com')\000a       );"; SQL statement:
+NSERT INTO files (
+    original_name,
+    stored_name,
+    content_type,
+    is_public,
+    share_key,
+    download_count,
+    user_id
+)
+VALUES (
+    'document1.txt',
+    'document1.txt',
+    'text/plain',
+    TRUE,
+    NULL,
+    0,
+    (SELECT id FROM users WHERE email = 'user1@gmail.com')
+);
+
+INSERT INTO files (
+    original_name,
+    stored_name,
+    content_type,
+    is_public,
+    share_key,
+    download_count,
+    user_id
+)
+VALUES (
+           'photo.jpg',
+           'photo.jpg',
+           'image/jpeg',
+           TRUE,
+           NULL,
+           2,
+           (SELECT id FROM users WHERE email = 'user1@gmail.com')
+       );
+
+INSERT INTO files (
+    original_name,
+    stored_name,
+    content_type,
+    is_public,
+    share_key,
+    download_count,
+    user_id
+)
+VALUES (
+           'private.txt',
+           'private.txt',
+           'text/plain',
+           FALSE,
+           'test-private-key-123',
+           0,
+           (SELECT id FROM users WHERE email = 'user2@gmail.com')
+       ); [42000-240]
