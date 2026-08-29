@@ -88,7 +88,7 @@ public class FileInfoServiceImpl implements FileInfoService {
 
         Pageable pageable = PageRequest.of(page, size);
 
-        Page<FileInfo> files = fileInfoRepository.findIsPublicTrue(pageable);
+        Page<FileInfo> files = fileInfoRepository.findByIsPublicTrue(pageable);
 
         return files.map(f -> FileInfoDto.builder()
                 .id(f.getId())

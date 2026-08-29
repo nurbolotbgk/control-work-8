@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface FileInfoRepository extends JpaRepository<FileInfo, Long> {
     Page<FileInfo> findByUserId(Long userId, Pageable pageable);
-    Page<FileInfo> findIsPublicTrue(Pageable pageable);
+    Page<FileInfo> findByIsPublicTrue(Pageable pageable);
     Optional<FileInfo> findByShareKey(String shareKey);
 
 }
